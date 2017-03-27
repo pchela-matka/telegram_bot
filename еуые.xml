@@ -1,0 +1,61 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list>
+      <Biscuit>
+        <option name="date" value="-1" />
+        <option name="domain" value="192.168.70.229" />
+        <option name="name" value="JSESSIONID" />
+        <option name="path" value="/" />
+        <option name="value" value="0000eXF160lDM7PBf_BWzGghqs5:-1" />
+      </Biscuit>
+      <Biscuit>
+        <option name="date" value="-1" />
+        <option name="domain" value="192.168.70.229" />
+        <option name="name" value="LtpaToken2" />
+        <option name="path" value="/" />
+        <option name="value" value="Dmmv56upP2KeTHgW+v1q/iTXAtS7EYPViqZrmedtrmXBh2Fj4gkIDnRKVUrUGQ33fPwKmFGapGvollYCWBNsbFOoOXlVlK5PSb3H2NH3y/5q9HDvSPEnkCw9Ucg+Zs6VsjumzLobt/ET2Pq+axGJCmExRS7M8AsknfN6kA5TwHLmlvHRK4YyGo2VSo6IHN/noFQfHjDLUgpe+Fcysj6QtaQyrqOizmRL+3NjnGDKICEHZG2dwl/xglFgX9f4NsMdYx5tEMCWPTRzx2Z0rhs/SOINKnFqRTO34mkqPnRXufhrIXsv+uRgHIfwC8XVKfaxzNJtgr2Qjj+gjA9eS5nAjGmM/H8JQ+/C0x85OpZ9hfdRlF208a+MAVJaqxgd/BfcUgbyXreF47rRZEOGqSbY+SQRJMAXTruZ/uIoxfLDOlg2biYPHKWNfC5k0iWALe90ax0H2sk4HRJbIdA3n9YE1DZnbeB/OPo08RTG5d+DBjqHV3rxMCik9pSnf50uOFquMilQUo8xGugf8H+be0zURgc73GNX8FhDR0TnITHo1ToZY6wH2hSkaSkSjXEXO+4u4I2oco25z5jbhx2wy1A4R+QVbRoxD0sNVt9IZwE0WtCmHj+XnjLwfT2oozPYlTMM1G5rge1gUSF7lXlcHwTqS5Of1ht8KuzIL0oeQ+1mmoBAyR+duc2v4CYUfbScsuSR" />
+      </Biscuit>
+    </list>
+  </option>
+  <option name="httpMethod" value="PUT" />
+  <option name="urlBase" value="http://192.168.70.229" />
+  <option name="urlPath" value="maxrest/rest/os/MXSR" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="*/*" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Cache-Control" />
+        <option name="value" value="no-cache" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Authorization" />
+        <option name="value" value="Basic bWF4YWRtaW46U3RyMG5nMW5nOTAoKQ==" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="description" />
+        <option name="value" value="test test" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="_format" />
+        <option name="value" value="json" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="description_longdescription" />
+        <option name="value" value="Тестовая заявка" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="true" />
+  <option name="haveTextToSend" value="false" />
+  <option name="haveFileToSend" value="false" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="" />
+  <option name="filesToSend" value="" />
+</RestClientRequest>
