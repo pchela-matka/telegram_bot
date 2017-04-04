@@ -1,6 +1,5 @@
 package core.service.commands;
 
-import core.service.MaximoService;
 import core.service.maximo.GetSr;
 import core.service.maximo.GetSrs;
 import core.service.utils.ReplyCommandUtils;
