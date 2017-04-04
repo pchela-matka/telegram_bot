@@ -20,7 +20,7 @@ import java.io.IOException;
 public class CreateSrCommand extends BotCommand {
     public CreateSrCommand() {
 
-        super("createsr", "Comand to create new sr");
+        super("createsr", "Command to create new sr");
     }
 
     @Override
@@ -47,10 +47,9 @@ public class CreateSrCommand extends BotCommand {
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         SendMessage answer = new SendMessage();
         if (UsersMap.getUSERS().get(String.valueOf(user.getId())) != null) {
-                answer.setChatId(chat.getId().toString());
-               SrMap.myHashMap.put(String.valueOf(user.getId()), new MyEntity());
-                answer.setText("Введите тему вашей заявки");
-                //answer.setText(MaximoService.createSR(strings[0], strings[1], UsersMap.getUSERS().get(String.valueOf(user.getId()))));
+            answer.setChatId(chat.getId().toString());
+            SrMap.myHashMap.put(String.valueOf(user.getId()), new MyEntity());
+            answer.setText("Введите тему вашей заявки");
         } else if (UsersMap.getUSERS().get(String.valueOf(user.getId())) == null) {
             answer.setReplyMarkup(ReplyCommandUtils.getReplyKeyboard());
         }

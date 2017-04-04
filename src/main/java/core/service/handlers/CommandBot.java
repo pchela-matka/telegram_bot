@@ -1,10 +1,12 @@
 package core.service.handlers;
 
-import core.service.MaximoService;
 import core.service.commands.CreateSrCommand;
 import core.service.commands.HelpCommand;
 import core.service.commands.OpenSrCommand;
 import core.service.commands.StartCommand;
+import core.service.maximo.AddPhoneMaximo;
+import core.service.maximo.NewSr;
+import core.service.utils.GetProperties;
 import core.service.utils.SrMap;
 import core.service.utils.UsersMap;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -45,7 +47,7 @@ public class CommandBot extends TelegramLongPollingCommandBot {
                 } else if (SrMap.getMyHashMap().get(String.valueOf(message.getFrom().getId())) != null && SrMap.getMyHashMap().get(String.valueOf(message.getFrom().getId())).getDesc() != null) {
                     SrMap.getMyHashMap().get(String.valueOf(message.getFrom().getId())).setLongdesc(message.getText());
                     try {
-                        echoMessage.setText(MaximoService.createSR(SrMap.getMyHashMap().get(String.valueOf(message.getFrom().getId())).getDesc(),
+                        echoMessage.setText(NewSr.createSR(SrMap.getMyHashMap().get(String.valueOf(message.getFrom().getId())).getDesc(),
                                 SrMap.getMyHashMap().get(String.valueOf(message.getFrom().getId())).getLongdesc(), String.valueOf(message.getFrom().getId())));
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -81,7 +83,7 @@ public class CommandBot extends TelegramLongPollingCommandBot {
                 try {
                     SendMessage echoMessage = new SendMessage();
                     echoMessage.setChatId(message.getChatId());
-                    echoMessage.setText(MaximoService.addPersonPhone(message.getContact().getPhoneNumber(), message.getFrom().getId()));
+                    echoMessage.setText(AddPhoneMaximo.addPersonPhone(message.getContact().getPhoneNumber(), message.getFrom().getId()));
                     sendMessage(echoMessage);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -99,6 +101,6 @@ public class CommandBot extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return "312388495:AAEZKETk2TNXGUNG0I4TBxcoZq83WrzbWIo";
+        return GetProperties.properies("botkey");
     }
 }

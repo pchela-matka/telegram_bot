@@ -1,6 +1,8 @@
 package core.service.commands;
 
 import core.service.MaximoService;
+import core.service.maximo.GetSr;
+import core.service.maximo.GetSrs;
 import core.service.utils.ReplyCommandUtils;
 import core.service.utils.UsersMap;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -27,11 +29,11 @@ public class OpenSrCommand extends BotCommand {
             try {
                 answer.setChatId(chat.getId().toString());
                 if (strings.length == 0) {
-                    answer.setText(MaximoService.getDataFromMaximo());
+                    answer.setText(GetSrs.getDataFromMaximo());
                 } else if (strings.length == 1) {
                     String test = strings[0];
                     int position = test.indexOf(" ");
-                    answer.setText(MaximoService.getSrDetail(test.trim().substring(position + 1)));
+                    answer.setText(GetSr.getSrDetail(test.trim().substring(position + 1)));
                 }
             } catch (IOException e) {
                 e.printStackTrace();
