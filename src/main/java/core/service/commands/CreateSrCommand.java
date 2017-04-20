@@ -1,9 +1,6 @@
 package core.service.commands;
 
-import core.service.utils.MyEntity;
-import core.service.utils.ReplyCommandUtils;
-import core.service.utils.SrMap;
-import core.service.utils.UsersMap;
+import core.service.utils.*;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Chat;
 import org.telegram.telegrambots.api.objects.User;
@@ -23,6 +20,7 @@ public class CreateSrCommand extends BotCommand {
 
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         SendMessage answer = new SendMessage();
+        CleanHashMap.CleanInfo(String.valueOf(user.getId()));
         if (UsersMap.getUSERS().get(String.valueOf(user.getId())) != null) {
             answer.setChatId(chat.getId().toString());
             SrMap.myHashMap.put(String.valueOf(user.getId()), new MyEntity());

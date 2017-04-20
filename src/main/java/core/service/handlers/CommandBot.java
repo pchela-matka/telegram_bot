@@ -63,7 +63,7 @@ public class CommandBot extends TelegramLongPollingCommandBot {
             } else if (message.hasText() && UsersMap.getUSERS().get(String.valueOf(message.getFrom().getId())) == null) {
                 SendMessage echoMessage = new SendMessage();
                 echoMessage.setChatId(message.getChatId());
-                echoMessage.setText("Hello man, you trigger my new command");
+                echoMessage.setText("Мне не знакома команда:\n" + message.getText());
                 ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
                 echoMessage.setReplyMarkup(replyKeyboardMarkup);
                 replyKeyboardMarkup.setSelective(true);

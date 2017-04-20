@@ -1,7 +1,6 @@
 package core.service.commands;
 
-import core.service.utils.ReplyCommandUtils;
-import core.service.utils.UsersMap;
+import core.service.utils.*;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Chat;
 import org.telegram.telegrambots.api.objects.User;
@@ -20,6 +19,7 @@ public class StartCommand extends BotCommand {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         SendMessage answer = new SendMessage();
+        CleanHashMap.CleanInfo(String.valueOf(user.getId()));
         answer.setChatId(chat.getId().toString());
         if (UsersMap.getUSERS().get(String.valueOf(user.getId()))!= null)
         {answer.setText("Для получения информации необходимо использовать следующие команды:" + "\n" +

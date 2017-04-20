@@ -9,24 +9,21 @@ import org.telegram.telegrambots.bots.commands.BotCommand;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 /**
- * Created by astegnienko on 23.02.2017.
+ * Created by astegnienko on 04.04.2017.
  */
-public class HelpCommand extends BotCommand {
-    public HelpCommand() {
-        super("help", "help");
+public class FeddbackCommand extends BotCommand {
+    public FeddbackCommand(String commandIdentifier, String description) {
+        super("feedback", "Command to create new feedback");
     }
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         SendMessage answer = new SendMessage();
         CleanHashMap.CleanInfo(String.valueOf(user.getId()));
-        answer.setChatId(chat.getId().toString());
         if (UsersMap.getUSERS().get(String.valueOf(user.getId())) != null) {
-            answer.setText("Для получения информации необходимо использовать следующие команды:" + "\n" +
-                    "/opensr - перечень ваших открытых заявок" + "\n" +
-                    "/opensr \"номер заявки\" - детальная информация по заявке. Пример команды - /opensr 1000" + "\n" +
-                    "/createsr \"тема описание(без пробелов)\" - детальная информация по заявке. Пример команды - /createsr Тест Заявка_для_тестирования_телеграма" + "\n" +
-                    "/help - перечень доступных команд");
+            answer.setChatId(chat.getId().toString());
+            FeedbackMap.FEEDBACK.put(String.valueOf(user.getId()), "");
+            answer.setText("Введите ваше предложение по улучшению сервиса");
         } else if (UsersMap.getUSERS().get(String.valueOf(user.getId())) == null) {
             answer.setReplyMarkup(ReplyCommandUtils.getReplyKeyboard());
         }
@@ -35,5 +32,6 @@ public class HelpCommand extends BotCommand {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+
     }
 }

@@ -2,8 +2,7 @@ package core.service.commands;
 
 import core.service.maximo.GetSr;
 import core.service.maximo.GetSrs;
-import core.service.utils.ReplyCommandUtils;
-import core.service.utils.UsersMap;
+import core.service.utils.*;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Chat;
 import org.telegram.telegrambots.api.objects.User;
@@ -24,6 +23,7 @@ public class OpenSrCommand extends BotCommand {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         SendMessage answer = new SendMessage();
+        CleanHashMap.CleanInfo(String.valueOf(user.getId()));
         if (UsersMap.getUSERS().get(String.valueOf(user.getId())) != null) {
             try {
                 answer.setChatId(chat.getId().toString());
